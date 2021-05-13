@@ -39,7 +39,7 @@ class Immobile():
  
     def inserimento(self, lista, catalogo):
         lista.append(self)
-        catalogo.lista.append(self)
+        catalogo.Lista.append(self)
 
         print("L'immobile è stato inserito con successo!\n")
 
