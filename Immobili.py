@@ -1,3 +1,19 @@
+'''
+2. estendere il software aggiungendo la possibilità di salvare i dati in maniera permanente su un database locale (sqlite);
+
+3. estendere il software utilizzando un ORM (Object-relation Mapping: peewee) per agevolare la manutenzione successiva;
+
+4. creare un repository su github e utilizzarlo per tutte le fasi di lavorazione del software, creando almeno un commit distinto per ogni punto di cui sopra.
+'''
+
+import sqlite3
+
+conn = sqlite3.connect('Agenzia.db')
+conn.execute('CREATE TABLE immobile (immobileid INTEGER PRIMARY KEY, rifprop, indirizzo, prezzo, catalogoid)')
+conn.execute('CREATE TABLE Catalogo (catalogoid INTEGER PRIMARY KEY, nome, prezzomin, prezzomax)')
+
+
+
 class Catalogo():
 
     def __init__(self,nome,prezzomin,prezzomax):
@@ -66,8 +82,8 @@ myImmobile2 = Immobile("Luigi Verde","Via Milano 30","300","Popolari")
 
 
 #Prova funzioni
-myImmobile.inserimento(ListaImmobili)
-myImmobile.inserimento(ListaImmobili)
+myImmobile.inserimento(ListaImmobili,Di_Prestigio)
+myImmobile2.inserimento(ListaImmobili,Popolari)
 myImmobile.modifica()
 myImmobile.cancellazione(ListaImmobili)
 
